@@ -197,7 +197,7 @@ def concat_images(img1, img2,boarder=5,color=(255,255,255)):
     return np.concatenate((img1_boarder, img2_boarder),axis=1)
 
 #display quadtree 
-def displayQuadTree(img_name,threshold=7,minCell=1,img_boarder=20,line_boarder=1,line_color=(0,0,255)):
+def displayQuadTree(img_name,threshold=0.01,minCell=1,img_boarder=20,line_boarder=1,line_color=(0,0,255)):
     imgT = cv2.imread(img_name)
     qt = QTree(img=imgT,stdThreshold=threshold,minPixelSize=minCell)
     qt.subdivide()
@@ -230,8 +230,11 @@ def displayQuadTree(img_name,threshold=7,minCell=1,img_boarder=20,line_boarder=1
     printI(hConcat)
     '''
 
+if __name__=='__main__':
+    image_path = str(input("Enter image path: "))
+    threshold = float(input("Enter threshold: "))
 
-displayQuadTree(img_name="woman.jpeg",threshold=0.01,img_boarder=20,line_boarder=1,line_color=(0,0,255))
+    displayQuadTree(img_name = image_path,threshold=threshold,img_boarder=20,line_boarder=1,line_color=(0,0,255))
 
 #you can ajust the threshold to get better result the threshold can be calculate from histogramacumaliate
 
