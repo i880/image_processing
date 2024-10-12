@@ -233,3 +233,5 @@ def displayQuadTree(img_name,threshold=7,minCell=1,img_boarder=20,line_boarder=1
 
 displayQuadTree(img_name="woman.jpeg",threshold=0.01,img_boarder=20,line_boarder=1,line_color=(0,0,255))
 
+#you can ajust the threshold to get better result the threshold can be calculate from histogramacumaliate
+
